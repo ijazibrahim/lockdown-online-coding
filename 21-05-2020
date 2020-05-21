@@ -110,6 +110,8 @@ int main()
     getchar(); 
 }
 
+//Write a C program to construct a singly linked list by removing duplicate elements in the sorted linked list.
+
 #include<stdio.h>
 #include<stdlib.h>
 struct node
