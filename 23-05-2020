@@ -1,4 +1,4 @@
-//1.
+//1.Write a C Program to generate first N Triangular Numbers (Where N is Read from the Key board).
 #include <stdio.h>
 #include<stdlib.h>
 void main()
