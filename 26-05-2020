@@ -1,4 +1,4 @@
-//1.
+//1.Write a JAVA Program to remove all the Tens in the given array
 public class Main { 
 
 	// function to find total sub-array 
@@ -40,6 +40,7 @@ public class Main {
 	} 
 }
 
+//2.Write a program in C to print all permutations of a given string using pointers.
 #include <stdio.h>
 #include <string.h>
 
