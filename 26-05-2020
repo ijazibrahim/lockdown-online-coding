@@ -84,7 +84,7 @@ int main()
 	return 0;
 }
 
-//3.
+//3.Write a JAVA Program to remove all the Tens in the given array.
 import java.io.*;
 import java.util.Scanner;
 class tens
