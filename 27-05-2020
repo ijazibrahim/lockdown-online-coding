@@ -40,7 +40,8 @@ int main()
     return 0; 
 }
 
-//2.
+//2.Given an array arr[] of the positive integers of size N, the task is to find the largest element on the left side of each index which is smaller than the element present at that index.
+//Note: If no such element is found then print -1.
 #include <bits/stdc++.h> 
 using namespace std; 
 void findMaximumBefore(int arr[], int n)
