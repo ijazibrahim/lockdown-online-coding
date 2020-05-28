@@ -1,4 +1,5 @@
-//1.
+//1.In an array X of size M where the array elements contain values from 1 to M with duplicates, 
+//the task is to find total number of sub arrays which start and end with the same element.
 import java.util.Scanner;
   
 public class Main { 
@@ -36,3 +37,5 @@ public class Main {
         cntArray(A, length); 
     } 
 } 
+
+//2.
