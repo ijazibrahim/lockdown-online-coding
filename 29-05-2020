@@ -47,9 +47,7 @@ int main()
     return 0;
 }
 
-//2.
-// Java program to find the size of the largest '+' 
-// formed by all 1's in given binary matrix 
+//2.Write a Java program to Find size of the largest ‘+’ formed by all ones in a binary matrix.
 import java.util.Scanner; 
 import java.io.*; 
   
