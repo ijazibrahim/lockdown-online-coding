@@ -56,11 +56,7 @@ public class distinct {
     } 
 } 
 
-//2.Define a class Point with two fields x and y each of type double. Also , 
-//define a method distance(Point p1, Point p2) to calculate the distance between points p1 and p2 and return the value in double..
-//Use Math.sqrt( ) to calculate the square root.
-
-
+//2.To calculate the distance between the points.
 import java.util.*;
 import java.util.Scanner;
 public class distbtwpoints
