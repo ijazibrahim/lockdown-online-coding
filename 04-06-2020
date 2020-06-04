@@ -1,0 +1,51 @@
+/*1.Given an array C of size N-1 and given that there are numbers from 1 to N with one element missing, the missing number is to be found.*/
+
+#include <iostream>
+using namespace std;
+int findMissingNo (int arr[], int len){
+   int temp;  
+   temp  = ((len+1)*(len+2))/2;  
+   for (int i = 0; i<len; i++)    
+      temp -= arr[i];  
+   return temp;
+}
+int main() {
+   int n;   
+   cout<<"Enter the size of array: "; 
+   cin>>n;    int arr[n-1];  
+   cout<<"Enter array elements: ";   
+   for(int i=0; i<n; i++){    
+      cin>>arr[i];  
+   } 
+   int missingNo = findMissingNo(arr,5); 
+   cout<<"Missing Number is: "<<missingNo;
+   return 0;
+}
+
+
+/*2.write a java program to read three integer values from the keyboard and find the sum of the values. Declare a variable "sum" of type int and store the result in it.*/
+package inputkey;
+import java.util.Scanner;
+public class Input3 {
+	  public static void main(String[] args)
+
+	{       
+	    int i,n=0,sum=0;
+		
+		{
+		   
+	        System.out.println("Input the 3 numbers : ");  
+	         
+		}
+			for (i=0;i<3;i++)
+			{
+			    Scanner in = new Scanner(System.in);
+			    n = in.nextInt();
+			    
+	  		sum +=n;
+		}
+		
+		System.out.println("The sum of 3 no is : " +sum);
+	 
+	}
+}
