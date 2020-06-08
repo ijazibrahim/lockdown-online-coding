@@ -1,0 +1,134 @@
+//1.C Program to Generate All the Set Partitions of n Numbers Beginning from 1 and so on.
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct {
+int first;
+     int n;
+     int level;
+} Call;
+ 
+ 
+void print(int n, int * a) {
+     int i ;
+     for (i = 0; i <= n; i++) {
+          printf("%d", a[i]);
+     }
+     printf("\n");
+}
+ 
+ 
+void integerPartition(int n, int * a){
+     int first;
+     int i;
+     int top = 0;
+     int level = 0;
+     Call * stack = (Call * ) malloc (sizeof(Call) * 1000);
+     stack[0].first = -1;
+     stack[0].n = n;
+     stack[0].level = level;
+     while (top >= 0){
+          first = stack[top].first;
+          n = stack[top].n;
+          level = stack[top].level;
+          if (n >= 1) {
+               if (first == - 1) {
+                    a[level] = n;
+                    print(level, a);
+                    first = (level == 0) ? 1 : a[level-1];
+                    i = first;
+               } else {
+                    i = first;
+                    i++;
+               }
+               if (i <= n / 2) {
+                    a[level] = i;
+                    stack[top].first = i;
+                    top++;
+                    stack[top].first = -1;
+                    stack[top].n = n - i;
+                    stack[top].level = level + 1;
+          } else {
+               top--;
+          }
+     } else {
+     top --;
+     }
+}
+}
+ 
+int main(){
+    int N = 1;
+    int * a = (int * ) malloc(sizeof(int) * N);
+    int i;
+    printf("\nEnter a number N to generate all set partition from 1 to N: ");
+    scanf("%d", &N);
+    for ( i = 1; i <= N; i++)
+    {
+        printf("\nInteger partition for %d is: \n", i);
+        integerPartition (i, a);
+    }
+    return(0);
+}
+
+//2.Write a Java Program to check whether the given matrix is magic square or not.
+import java.io.*;
+class magicsquare
+{
+    static int N = 3;
+    // Returns true if mat[][] is magic
+    // square, else returns false.
+    static boolean isMagicSquare(int mat[][])
+    {
+        // calculate the sum of
+        // the prime diagonal
+         int sum = 0,sum2=0;  
+        for (int i = 0; i < N; i++)
+            sum = sum + mat[i][i];
+ 
+        // the secondary diagonal
+        for (int i = 0; i < N; i++)
+            sum2 = sum2 + mat[i][N-1-i];
+ 
+        if(sum!=sum2)  
+            return false;
+ 
+        // For sums of Rows
+        for (int i = 0; i < N; i++) {
+ 
+            int rowSum = 0;
+            for (int j = 0; j < N; j++)
+                rowSum += mat[i][j];
+ 
+             
+           
+            if (rowSum != sum)
+                return false;
+        }
+ 
+        // For sums of Columns
+        for (int i = 0; i < N; i++) {
+ 
+            int colSum = 0;
+            for (int j = 0; j < N; j++)
+                colSum += mat[j][i];
+ 
+           
+           
+            if (sum != colSum)
+                return false;
+        }
+ 
+        return true;
+    }
+public static void main(String[] args)
+{
+     int mat[][] = {{ 2, 7, 6 },
+                    { 9, 5, 1 },
+                    { 4, 3, 8 }};
+     if (isMagicSquare(mat))
+            System.out.println("Magic Square");
+        else
+            System.out.println("Not a magic" +
+                                    " Square");
+    }
+} 
