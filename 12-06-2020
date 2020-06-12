@@ -3,8 +3,6 @@ start = 11
 
 end = 25
 
-
-
 for val in range(start, end + 1): 
 
     if val > 1: 
