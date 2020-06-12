@@ -1,8 +1,6 @@
 //1.Given two positive integer start and end. The task is to write a Python program to print all Prime numbers in an Interval.
 start = 11
-
 end = 25
-
 for val in range(start, end + 1): 
 
     if val > 1: 
