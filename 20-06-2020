@@ -1,0 +1,81 @@
+//1.Write a Java program to count number of bits to be flipped to convert A to B.
+import java.util.*;
+class Bits  
+{
+ 
+// Function to return the count of bits
+// to be flipped to convert a to b
+static int countBits(int a, int b)
+{
+ 
+    // To store the required count
+    int count = 0;
+ 
+    // Loop until both of them become zero
+    while (a > 0 || b > 0)  
+    {
+ 
+        // Store the last bits in a
+        // as well as b
+        int last_bit_a = a & 1;
+        int last_bit_b = b & 1;
+ 
+        // If the current bit is not same
+        // in both the integers
+        if (last_bit_a != last_bit_b)
+            count++;
+ 
+        // Right shift both the integers by 1
+        a = a >> 1;
+        b = b >> 1;
+    }
+ 
+    // Return the count
+    return count;
+}
+ 
+// Driver code
+public static void main(String[] args)  
+{
+    int a = 7, b = 10;
+ 
+    System.out.println(countBits(a, b));
+}
+} 
+
+//2.Program that compares counting words in files using an ArrayList and a Map.
+import java.io.File;
+import java.io.IOException;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class SimpleWordCounter {
+   
+    public static void main(String[] args) {
+        try {
+            File f = new File("ciaFactBook2008.txt");
+            Scanner sc;
+            sc = new Scanner(f);
+            // sc.useDelimiter("[^a-zA-Z']+");
+            Map<String, Integer> wordCount = new TreeMap<String, Integer>();
+            while(sc.hasNext()) {
+                String word = sc.next();
+                if(!wordCount.containsKey(word))
+                    wordCount.put(word, 1);
+                else
+                    wordCount.put(word, wordCount.get(word) + 1);
+            }
+           
+            // show results
+            for(String word : wordCount.keySet())
+                System.out.println(word + " " + wordCount.get(word));
+            System.out.println(wordCount.size());
+        }
+        catch(IOException e) {
+            System.out.println("Unable to read from file.");
+        }
+    }
+}
+
+
