@@ -1,0 +1,88 @@
+//1.Write a C Program to check whether the number is Ugly or not.
+# include <stdio.h>
+# include <string.h>
+
+int main()
+{
+int n,x=0;
+  printf("\n\n Check whether a given number is an ugly number:\n");
+  printf("----------------------------------------------------\n");
+  printf("Input an integer number: ");
+  scanf("%d",&n);
+
+      if (n <= 0) {  
+            printf("Input a correct number.");  
+        }
+       while (n != 1) 
+       {  
+            if (n % 5 == 0) 
+            {  
+                n /= 5;  
+            } 
+            else if (n % 3 == 0) 
+            {  
+                n /= 3;  
+            } 
+            else if (n % 2 == 0) 
+            {  
+                n /= 2;  
+            } 
+            else 
+            {  
+                printf("It is not an ugly number.\n"); 
+                x = 1;  
+                break;  
+            }  
+        } 
+		        if (x==0)
+		        { 
+                printf("It is an ugly number.\n");
+                }
+}
+//2.Write a C++ Program to Move all zeroes to end of array using Two-Pointers.
+#include <iostream>  
+using namespace std;  
+  
+// Function to move all zeroes at  
+// the end of array  
+void moveZerosToEnd(int arr[], int n)  
+{  
+    int j=0, temp, i; 
+      
+    // Traverse the array. If arr[i] is 
+    // non-zero and arr[j] is zero,  
+    // then swap both the element 
+    for(i=0;i<n;i++) 
+    { 
+        if(arr[i]!=0 && arr[j]==0) 
+            { 
+             swap(arr[i],arr[j]); 
+            } 
+        if(arr[j]!=0) 
+            j+=1; 
+    } 
+}  
+  
+// Function to print the array elements  
+void printArray(int arr[], int n)  
+{  
+    for (int i = 0; i < n; i++)  
+        cout << arr[i] << " ";  
+}  
+  
+// Driver Code 
+int main()  
+{  
+    int arr[] = {8, 9, 0, 1, 2, 0, 3};  
+    int n = sizeof(arr) / sizeof(arr[0]);  
+  
+    cout << "Original array: ";  
+    printArray(arr, n);  
+  
+    moveZerosToEnd(arr, n);  
+  
+    cout << "\nModified array: ";  
+    printArray(arr, n);  
+  
+    return 0;  
+} 
